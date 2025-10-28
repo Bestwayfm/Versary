@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Happy Anniversary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+  <div class="card" role="article" aria-label="Anniversary card">
+    <header>
+      <div class="logo-heart" aria-hidden="true">
+        <!-- simple heart icon -->
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        
+          <path d="M12 21s-6.716-4.35-9.477-7.12C-1.063 9.843 3.555 4 7.5 7.5 9.59 9.31 12 11 12 11s2.41-1.69 4.5-3.5C20.445 4 25.063 9.843 21.477 13.88 18.716 16.65 12 21 12 21z" fill="url(#g)" opacity="0.95"/>
+          <defs>
+            <linearGradient id="g" x1="0" x2="1">
+              <stop offset="0" stop-color="#ff8b8b"/>
+              <stop offset="1" stop-color="#ff6b6b"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div>
+        <h1>To the love of my life</h1>
+        <p class="lead">A little card to celebrate our special day — from the heart to yours.</p>
+      </div>
+    </header>
+
+    <div class="stage">
+      <div class="message" id="messageCard">
+        <div class="big" id="typedLine">I love you Ayomi...</div>
+        <p class="sub" id="subLine">Happy anniversary to us</p>
+        <div class="floating-hearts" id="hearts"></div>
+      </div>
+
+      <div class="controls">
+        <button id="revealBtn">Reveal & Celebrate</button>
+        <button class="secondary" id="resetBtn">Reset</button>
+      </div>
+    </div>
+    <footer>Made with ❤️</footer>
+  </div>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
+
+<style>
+:root{
+      --bg1: #0f2027;
+      --bg2: #203a43;
+      --accent: #ff6b6b;
+      --accent-2: #ffd166;
+      --glass: rgba(255,255,255,0.06);
+      --card-w: min(760px, 92%);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;}
+    body{
+      margin:0;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: radial-gradient(1200px 600px at 10% 20%, rgba(255,107,107,0.08), transparent), linear-gradient(135deg,var(--bg1),var(--bg2));
+      color: #fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:48px 16px;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .card{
+      width:var(--card-w);
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border-radius:18px;
+      padding:36px;
+      box-shadow: 0 10px 40px rgba(2,6,23,0.6);
+      position:relative;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+
+    /* decorative faint circles */
+    .card::before, .card::after{
+      content:"";
+      position:absolute;
+      border-radius:50%;
+      filter:blur(40px);
+      opacity:0.35;
+      pointer-events:none;
+    }
+    .card::before{
+      width:420px;height:420px;left:-120px;top:-160px;background:linear-gradient(45deg,var(--accent),transparent);
+    }
+    .card::after{
+      width:300px;height:300px;right:-80px;bottom:-120px;background:linear-gradient(45deg,var(--accent-2),transparent);
+    }
+
+    header{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      margin-bottom:18px;
+    }
+    .logo-heart{
+      width:64px;height:64px;border-radius:14px;background:linear-gradient(180deg,#fff2,transparent);display:grid;place-items:center;border:1px solid rgba(255,255,255,0.06);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.35) inset;
+    }
+    .logo-heart svg{width:36px;height:36px;transform:translateY(-2px)}
+
+    h1{
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(22px, 4.2vw, 36px);
+      margin:0;
+      line-height:1.02;
+      letter-spacing: -0.4px;
+      color: #fff;
+      text-shadow: 0 6px 18px rgba(0,0,0,0.45);
+    }
+    p.lead{
+      margin:6px 0 0 0;color:rgba(255,255,255,0.78);font-size:14px;font-weight:500
+    }
+
+    .stage{
+      margin-top:22px;
+      display:flex;
+      gap:18px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+
+    .message {
+      flex:1 1 420px;
+      padding:28px;
+      border-radius:12px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.03);
+      box-shadow: 0 8px 30px rgba(2,6,23,0.45);
+      position:relative;
+    }
+
+    .message .big{
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 5.8vw, 56px);
+      margin:0 0 8px 0;
+      letter-spacing:-1px;
+      color:var(--accent-2);
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .message .sub{
+      margin:0;color:#fff;font-weight:600;opacity:0.95;font-size:18px
+    }
+
+    .controls{
+      display:flex;gap:12px;align-items:center;flex-direction:column;min-width:220px
+    }
+    .controls button{
+      width:100%;padding:12px 14px;border-radius:10px;border:none;font-weight:600;cursor:pointer;font-size:15px;
+      background:linear-gradient(90deg,var(--accent),#ff8b8b);color:#111;box-shadow: 0 6px 18px rgba(255,107,107,0.12);
+    }
+    .controls button.secondary{background:transparent;color:var(--accent-2);border:1px solid rgba(255,255,255,0.06);box-shadow:none}
+
+    footer{margin-top:18px;text-align:center;color:rgba(255,255,255,0.65);font-size:13px}
+
+    /* heart animation */
+    .floating-hearts{
+      position:absolute;inset:0;pointer-events:none;
+    }
+    .heart{
+      position:absolute;
+      width:18px;height:18px;transform:translate(-50%,-50%);
+      opacity:0;will-change:transform,opacity;
+    }
+
+    /* small responsive tweaks */
+    @media (max-width:640px){
+      .controls{min-width:auto;flex-direction:row;width:100%}
+      .controls button{flex:1}
+    }
+  </style>
+
+  <script>
+
+    // small JS to animate typed text, floating hearts and simple confetti-ish effect
+    const revealBtn = document.getElementById('revealBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const typedLine = document.getElementById('typedLine');
+    const subLine = document.getElementById('subLine');
+    const heartsContainer = document.getElementById('hearts');
+
+    const fullText = 'I love you and happy anniversary to us';
+
+    function typeText(el, text, speed=45){
+      el.textContent = '';
+      let i=0;
+      return new Promise(resolve => {
+        const t = setInterval(()=>{
+          el.textContent += text[i++] || '';
+          if(i>text.length){ clearInterval(t); resolve(); }
+        }, speed)
+      })
+    }
+
+    function createHeart(xFrac){
+      const h = document.createElement('div');
+      h.className = 'heart';
+      const size = Math.random()*18 + 12; // 12 - 30
+      h.style.width = size + 'px';
+      h.style.height = size + 'px';
+      // inline SVG heart
+      h.innerHTML = `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><path d="M12 21s-6.716-4.35-9.477-7.12C-1.063 9.843 3.555 4 7.5 7.5 9.59 9.31 12 11 12 11s2.41-1.69 4.5-3.5C20.445 4 25.063 9.843 21.477 13.88 18.716 16.65 12 21 12 21z" fill="rgba(255,107,107,0.95)"/></svg>`;
+      // start position
+      const startX = (xFrac || Math.random()) * 100; // percent
+      h.style.left = startX + '%';
+      h.style.bottom = '-10%';
+      heartsContainer.appendChild(h);
+
+      // animate using JS (simple)
+      const drift = (Math.random()-0.5)*40; // -20 to 20
+      const rise = 120 + Math.random()*60;
+      const duration = 3800 + Math.random()*2200;
+      h.animate([
+        { transform: `translate(-50%,0) translateY(0px) translateX(0px) scale(0.6)`, opacity:0 },
+        { transform: `translate(-50%,-${rise}px) translateX(${drift}px) scale(1)`, opacity:1 },
+        { transform: `translate(-50%,-${rise+30}px) translateX(${drift*1.4}px) scale(0.8)`, opacity:0 }
+      ],{duration, easing:'cubic-bezier(.2,.8,.2,1)'});
+
+      // cleanup
+      setTimeout(()=>h.remove(), duration+50);
+    }
+
+    function burstHearts(count=18){
+      for(let i=0;i<count;i++){
+        setTimeout(()=>createHeart(), i*80);
+      }
+    }
+
+    function reveal(){
+      revealBtn.disabled = true;
+      // typed text
+      typeText(typedLine, fullText, 45).then(()=>{
+        // small pulse on subline
+        subLine.animate([{ transform:'scale(0.98)'},{ transform:'scale(1.02)'},{ transform:'scale(1)'}],{duration:900,easing:'ease-out'});
+        // burst of hearts
+        burstHearts(26);
+        // little confetti - using many tiny hearts
+        setTimeout(()=>{ revealBtn.disabled = false; }, 1600);
+      });
+    }
+
+    function reset(){
+      typedLine.textContent = 'I love you ...';
+      // clear hearts
+      heartsContainer.innerHTML='';
+    }
+
+    revealBtn.addEventListener('click', reveal);
+    resetBtn.addEventListener('click', reset);
+
+    // small gentle auto effect: float a few hearts slowly
+    setInterval(()=>{ createHeart(0.2 + Math.random()*0.6); }, 2500);
+  
+  </script>
